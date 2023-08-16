@@ -57,5 +57,3 @@ The `calculate_deviations` function calculates the minimum deviations between tr
 The `test_ideal_deviations` function merges the test dataset with four chosen ideal functions. The `mapping_points` function maps points based on deviations and specified criteria. Visualization of the chosen ideal functions and scatter plots of mapped points and residuals are provided.
 
 ---
-
-Please note that the code provided has been structured into sections for documentation purposes. You can use this outline as a starting point to create a detailed and organized project documentation in a Word document format.
