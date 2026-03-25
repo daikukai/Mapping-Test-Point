@@ -36,6 +36,13 @@ $$\beta=(X^{\prime}X)^{-1}X^{\prime}y$$
 # Mentions and Acknowledgements
 The research establishes that while the least squares method is a valued approach, it is vital to be aware of its limitations. I would like to acknowledge the resources provided by the International University of Applied Sciences during the development of this research.
 
+
+# AI Usage Disclosure
+The authors acknowledge the use of Google Gemini (Large Language Model) in the preparation of this submission. 
+- Tool used: Gemini (March 2026 version).
+- Nature of assistance: The AI was used to refactor existing research text from a PDF into Markdown format, assist with the drafting of the README.md documentation, and generate the BibTeX reference structure. 
+- Confirmation of review: All AI-generated outputs, including code descriptions and mathematical formatting, were manually reviewed, edited, and validated by the author to ensure accuracy and original intent.
+
 # References
 - Montgomery, D. C., Peck, E. A., & Vining, G. G. *Introduction to Linear Regression Analysis*.
 - James, G., Witten, D., Hastie, T., & Tibshirani, R. (2013). *Introduction to statistical learning* (2nd ed.). New York, NY: Springer.
