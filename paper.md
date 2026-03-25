@@ -15,7 +15,7 @@ bibliography: paper.bib
 The least square method is a commonly used technique to fit the regression line on a dataset, providing an appropriate approach for finding ideal functions. This software implements both theoretical and experimental methodologies to analyze the performance of the least square method in selecting and mapping ideal functions from a provided dataset. While the outcomes indicate that the least square method is a convenient tool, the implementation also highlights its sensitivity to flaws like outliers, dimensionality problems, overfitting, and multicollinearity.
 
 # Statement of Need
-In various fields like healthcare, finance, engineering, and education, researchers must select ideal functions to display complex relationships between variables. While Ordinary Least Square (OLS) regression is widely adopted, its performance varies significantly depending on the characteristics of the data. 
+In various fields like healthcare, finance, engineering, and education, researchers must select ideal functions to display complex relationships between variables. While Ordinary Least Square (OLS) regression is widely adopted, its performance varies significantly depending on the characteristics of the data. This tool isn't just for one analysis, but is a library/framework that other researchers at the International University of Applied Sciences (or elsewhere) can use to test their own datasets against the Least Squares method. 
 
 This software provides a Python-based implementation using `SQLAlchemy`, `pandas`, and `scikit-learn` to automate the process of:
 1. Identifying the best-fitting "ideal functions" from a large set (50 functions) for a given training dataset.
