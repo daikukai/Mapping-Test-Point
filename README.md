@@ -1,59 +1,55 @@
-# Project Code Documentation
+ Mapping-Test-Point: Least Squares Optimization & Function Selection
 
-## Introduction
+This repository contains a Python-based implementation for selecting ideal functions from a candidate pool and mapping test data points based on minimum deviation criteria. This project was developed as part of research into the Advantages and Limitations of the Least Square Method at the International University of Applied Sciences.
 
-This document provides an overview of the code used for a project involving data processing, analysis, and visualization. The project utilizes various libraries and techniques to perform data manipulation, visualization, and model evaluation.
+Overview
 
-## Table of Contents
+The core objective of this software is to automate the identification of mathematical models that best represent a given training dataset. By utilizing the Ordinary Least Squares (OLS) method, the system:
+1.  Ingests raw CSV data into a structured **SQLite** database.
+2.  Analyzes 50 candidate ideal functions to find the four best fits for the training data.
+3.  Maps test data points to these functions using a calculated maximum deviation threshold ($\sqrt{2} \times \text{max deviation}$).
+4.  Provides statistical validation (MSE, RMSE, MAE, and R-squared) and visual diagnostics.
 
-1. **DataProcessor Class**
-   - Creating and interacting with a SQLite database using SQLAlchemy
-   - Creating tables with specific columns in the database
-   - Loading data from CSV files into the database tables
+Key Features
 
-2. **Load Data from Database Function**
-   - Loading data from three tables (train, ideal, and test) into separate pandas DataFrames
+- Automated Database Management: Full integration with SQLAlchemy and sqlite3 for persistent data storage.
+- Robust Visualization: Automated generation of scatter plots, box plots (for outlier detection), and residual plots.
+- Performance Metrics: Integrated model evaluation using scikit-learn to calculate:
+  - Mean Squared Error (MSE)
+  - Root Mean Squared Error (RMSE)
+  - R-squared (R2) Score
+- Validation Logic: Implements mathematical constraints to ensure test points are only mapped when they fall within acceptable deviation ranges.
 
-3. **Understanding the Data**
-   - Displaying the number of rows and columns in each dataset
-   - Providing a statistical description of the datasets
-   - Displaying the first few rows of each dataset
+Installation
 
-4. **Data Visualization**
-   - Creating scatter plots to observe the distribution of data
-   - Identifying outliers in the train dataset using box plots
+Prerequisites
+- Python 3.8 or higher
+- pip package manager
 
-5. **Deviation Calculation**
-   - Calculating the minimum deviations between train and ideal datasets
-   - Identifying the ideal function label with the minimum deviation for each train set
+Setup
+Clone the repository and install the required dependencies:
 
-6. **Mapping Points and Visualization**
-   - Mapping points based on deviations and specified criteria
-   - Visualizing the scatter plot of mapped points and actual y-values
-   - Visualizing the residual plot of residuals vs. mapped y-values
+System Architecture
 
-## DataProcessor Class
+DataProcessor: Handles table creation and CSV-to-SQL data migration.
 
-The DataProcessor class provides methods to create and interact with a SQLite database. It includes methods to create tables with specific columns and load data from CSV files into those tables.
+visulization: Manages the graphical output of data distributions and model performance.
 
-## Load Data from Database Function
+calculate_deviations: Executes the OLS-based logic to pair training sets with ideal functions.
 
-The `load_data_from_db` function establishes a connection to the SQLite database and loads data from the train, ideal, and test tables into separate pandas DataFrames.
+mapping_points: Maps the test dataset to the chosen functions based on criteria defined in the research.
 
-## Understanding the Data
+Mathematical Context: The selection logic is based on minimizing the sum of squared residuals.
 
-This section provides insights into the dataset's characteristics by displaying the number of rows and columns, statistical descriptions, and the first few rows of the train, ideal, and test datasets.
+git clone [https://github.com/daikukai/Mapping-Test-Point.git](https://github.com/daikukai/Mapping-Test-Point.git)
+cd Mapping-Test-Point
+pip install pandas numpy sqlalchemy matplotlib seaborn scikit-learn statsmodels bokeh
 
-## Data Visualization
+The mapping criterion for test points uses a threshold of: Threshold = sqrt(2) times Max Deviation
 
-The `visulization` class contains methods to create scatter plots and box plots for data visualization. Scatter plots help observe the distribution of data, while box plots assist in identifying outliers in the train dataset.
+License
+Distributed under the MIT License. See LICENSE for more information.
 
-## Deviation Calculation
+Acknowledgements
+Developed as part of academic research at the International University of Applied Sciences.
 
-The `calculate_deviations` function calculates the minimum deviations between train and ideal datasets. It identifies the ideal function label with the minimum deviation for each train set.
-
-## Mapping Points and Visualization
-
-The `test_ideal_deviations` function merges the test dataset with four chosen ideal functions. The `mapping_points` function maps points based on deviations and specified criteria. Visualization of the chosen ideal functions and scatter plots of mapped points and residuals are provided.
-
----
